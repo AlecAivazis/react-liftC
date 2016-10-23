@@ -23,6 +23,7 @@ const Counter = ({state, increment}) => (
 const state = {
   initialValue: 0,
   handlers: {
+    // handlers are functions with the signature (previousState, ...args) => newState
     increment(prev) { return prev + 1 }
   }
 }
