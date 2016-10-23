@@ -5,7 +5,7 @@ component to one with state. It's influenced by the same functional programming 
 is based on but does not require that all of your state be in a single component.
 
 
-I think the best way to show how this library works is with an example:
+I think the best way to show how this works is with an example:
 
 ```jsx
 import liftC from 'react-liftc'
