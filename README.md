@@ -48,7 +48,7 @@ import liftC, { toggleState } from 'react-liftc'
 // the component
 const MyComponent = ({ state, toggle }) => (
     <div onClick={toggle}>
-        {state}
+        {String(state)}
     </div>
 )
 
