@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm test",
-    "build": "babel liftC.js --out-file index.js",
+    "build": "babel src/index.js --out-file index.js",
     "prepublish": "npm run build"
   },
   "repository": {
