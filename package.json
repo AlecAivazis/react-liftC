@@ -1,0 +1,20 @@
+{
+  "name": "react-liftc",
+  "version": "0.0.1",
+  "description": "Lift stateless components to life ",
+  "main": "liftC.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/alecaivazis/react-liftc"
+  },
+  "keywords": [
+    "react",
+    "functional",
+    "redux"
+  ],
+  "author": "Alec Aivazis",
+  "license": "MIT"
+}
