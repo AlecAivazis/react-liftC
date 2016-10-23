@@ -46,7 +46,7 @@ To help with this, I included a few common states:
 import liftC, { toggleState } from 'react-liftc'
 
 // the component
-const MyComponent = ({ state, toggle, ...unusedProps }) => (
+const MyComponent = ({ state, toggle }) => (
     <div onClick={toggle}>
         {state}
     </div>
