@@ -30,4 +30,28 @@ const state = {
 
 // and now let's put them together
 const StatefulCounter = liftC(state)(Counter)
+
+```
+
+
+## Reusable State
+
+One benefit of having the state of our components in a separate data structure than the
+visual structure, is that we can factor out common state into separate entities that we
+can use multiple times across the application. For example, it is very common to have a
+component whose sole purpose is to track the toggle state (on/off) of a particular value.
+To help with this, I included a few common states:
+
+```jsx
+import liftC, { toggleState } from 'react-liftc'
+
+// the component
+const MyComponent = ({ state, toggle, ...unusedProps }) => (
+    <div onClick={toggle}>
+        {state}
+    </div>
+)
+
+const StatefulComponent = liftC(toggleState)(MyComponent)
+
 ```
