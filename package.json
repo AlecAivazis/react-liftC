@@ -1,8 +1,8 @@
 {
   "name": "react-liftc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Lift stateless components to life ",
-  "main": "liftC.js",
+  "main": "index.js",
   "scripts": {
     "test": "npm test",
     "build": "babel liftC.js --out-file index.js",
