@@ -4,9 +4,6 @@ import React from 'react'
 export default config => component => {
   // the stateful class that will manage the state
   return class StatefulComponent extends React.Component {
-    static propTypes = {
-      children: React.PropTypes.element
-    }
 
     constructor(...args) {
       // instantiate this
