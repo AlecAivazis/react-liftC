@@ -4,7 +4,8 @@
   "description": "Lift stateless components to life ",
   "main": "build/index.js",
   "scripts": {
-    "test": "ava src/**/*test.js --watch",
+    "test": "ava src/**/*test.js",
+    "test:watch": "ava src/**/*test.js --watch",
     "build": "babel src --out-dir build",
     "prepublish": "npm run build"
   },
@@ -44,7 +45,7 @@
   "ava": {
     "require": [
       "babel-register",
-      "./test/helpers/setup-browser-env.js"
+      "./helpers/setup-browser-env.js"
     ],
     "babel": "inherit"
   },
