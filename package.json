@@ -4,7 +4,7 @@
   "description": "Lift stateless components to life ",
   "main": "build/index.js",
   "scripts": {
-    "test": "npm test",
+    "test": "ava src/**/*test.js --watch",
     "build": "babel src --out-dir build",
     "prepublish": "npm run build"
   },
@@ -20,12 +20,35 @@
   "author": "Alec Aivazis",
   "license": "MIT",
   "devDependencies": {
+    "ava": "^0.18.2",
     "babel-cli": "^6.16.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
-    "babel-preset-stage-1": "^6.16.0"
+    "babel-preset-stage-1": "^6.16.0",
+    "babel-register": "^6.23.0",
+    "enzyme": "^2.7.1",
+    "react": "^15.3.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "peerDependencies": {
     "react": "^15.3.2"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react",
+      "stage-1"
+    ]
+  },
+  "ava": {
+    "require": [
+      "babel-register",
+      "./test/helpers/setup-browser-env.js"
+    ],
+    "babel": "inherit"
+  },
+  "dependencies": {
+    "browser-env": "^2.0.24"
   }
 }

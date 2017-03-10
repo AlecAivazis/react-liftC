@@ -1,6 +1,7 @@
 // external imports
 import React from 'react'
 import { mount } from 'enzyme'
+import test from 'ava'
 // local imports
 import liftC from './liftC'
 
@@ -30,15 +31,15 @@ const MultiCounter = ({state, addN, n}) => (
 )
 
 // make sure it returns a component
-it('returns a component', () => {
+test('returns a component', t => {
   // lift the component with the given state
   const NewComponent = liftC(state)(Counter)
 
   // make sure it returned a component
-  expect(React.isValidElement(NewComponent)).toBe.true
+  t.is(React.isValidElement(<NewComponent />), true)
 })
 
-it('state begins at initial value', () => {
+test('state begins at initial value', t => {
   // lift the component with the given state
   const StatefulCounter = liftC(state)(Counter)
 
@@ -46,10 +47,10 @@ it('state begins at initial value', () => {
   const component = mount(<StatefulCounter/>)
 
   // make sure the content of the article element is the initial value
-  expect(component.text()).toBe("1")
+  t.is(component.text(), "1")
 })
 
-it('passes props through', () => {
+test('passes props through', t => {
   // a component to test prop values
   const PropComponent = ({hello}) => <article>{hello}</article>
   // lift the component with the given state
@@ -60,10 +61,10 @@ it('passes props through', () => {
   // render the component
   const component = mount(<NewComponent hello="world"/>)
   // make sure the content of the article matches the prop we passed
-  expect(component.text()).toBe("world")
+  t.is(component.text(), "world")
 })
 
-it('handlers correctly affect the state', () => {
+test('handlers correctly affect the state', t => {
   // lift the component with the given state
   const NewComponent = liftC(state)(Counter)
 
@@ -74,10 +75,10 @@ it('handlers correctly affect the state', () => {
   component.find('div').simulate('click')
 
   // make sure the content of the article element is the initial value
-  expect(component.text()).toBe("2")
+  t.is(component.text(), "2")
 })
 
-it('passes handler arguments through', () => {
+test('passes handler arguments through', t => {
   // lift the component with the given state
   const NewComponent = liftC(state)(MultiCounter)
 
@@ -88,5 +89,5 @@ it('passes handler arguments through', () => {
   component.find('div').simulate('click')
 
   // make sure the content of the article element is the initial value
-  expect(component.text()).toBe("3")
+  t.is(component.text(), "3")
 })
